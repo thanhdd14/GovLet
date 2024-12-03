@@ -1,0 +1,486 @@
+@use "vars" as *;
+
+.sec-mv{
+	min-height: 100vh;
+	background: url("../img/mv-bg.jpg")no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+	padding: 230px 15px 150px 5%;
+	z-index: 3;
+}
+
+.mv-block{
+	&__note{
+		@include fts(14,20);
+		font-weight: 500;
+		letter-spacing: 1px;
+		max-width: 265px;
+		&-ttl{
+			display: block;
+			font-weight: bold;
+			@include fts(16,22);
+			margin-bottom: 20px;
+		}
+	}
+	&__line{
+		position: absolute;
+		bottom: 82px;
+		right: 13px;
+		width: 368px;
+		z-index: 2;
+		&-box{
+			background: $blue;
+			color: white;
+			@include fts(24,31.36);
+			font-weight: bold;
+			padding: 15px 16px;
+			text-align: center;
+			letter-spacing: 2px;
+			p{
+				margin-bottom: 15px;
+			}
+			a{
+				display: block;
+				position: relative;
+				color: white;
+				background: $green;
+				@include font-size(22.59);
+				text-align: left;
+				padding: 17px 5px 16px 100px;
+				&:before{
+					content: "";
+					width: 66px;
+					height: 64px;
+					background: url("../img/icon-line.png")no-repeat;
+					background-size: 100%;
+					position: absolute;
+					@include v-align;
+					left: 20px;
+				}
+			}
+		}
+		&-ct{
+			padding: 29px 77px 20px 32px;
+			text-align: justify;
+			@include fts(14,20);
+			position: relative;
+			&-ttl{
+				display: block;
+				position: absolute;
+				top: 30px;
+				right: 100%;
+				@include font-size(16);
+				font-weight: bold;
+				white-space: nowrap;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+.mv-heading{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	&__ttl{
+		&-01{
+			display: block;
+			position: absolute;
+			left: 2.5%;
+			top: 47%;
+			width: 28.85%;
+		}
+		&-02{
+			display: block;
+			position: absolute;
+			right: 1%;
+			top: 22%;
+			width: 50%;
+		}
+	}
+}
+
+.sec-concept{
+	padding: 150px 0 0;
+	z-index: 2;
+	margin-bottom: -48px;
+}
+
+.concept{
+	&-ttl{
+		position: absolute;
+		top: -12px;
+		left: 0;
+		z-index: 3;
+		width: 124px;
+	}
+	&-item{
+		position: absolute;
+		&--01{
+			left: 0;
+			top: 46px;
+			width: 18.3%;
+		}
+		&--02{
+			right: 0;
+			top: 130px;
+			width: 50%;
+		}
+	}
+	&-block{
+		position: relative;
+		padding: 114px 0 86px;
+		&__ttl{
+			@include fts(48,71);
+			font-weight: bold;
+			span{
+				-webkit-writing-mode: vertical-rl;
+				-ms-writing-mode: tb-rl;
+				writing-mode: vertical-rl;
+			}
+			&--top{
+				position: absolute;
+				top: 0;
+				right: 18px;
+			}
+			&--bottom{
+				padding: 0 0 0 0;
+			}
+		}
+		&__item{
+			max-width: 625px;
+			margin-bottom: 195px;
+			padding: 0 0 0 170px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		&__note{
+			@include flex(0,start,wrap);
+			margin-bottom: 64px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			&-ttl{
+				width: 100px;
+				@include font-size(16);
+				line-height: 1;
+				font-weight: bold;
+				color: #fc9900;
+				position: relative;
+				padding: 14px 0;
+				letter-spacing: 1px;
+			}
+			&-number{
+				width: 57px;
+				height: 57px;
+				background: white;
+				border-radius: 50%;
+				@include flex(center,center);
+				@include font-size(18);
+				font-weight: bold;
+				line-height: 1;
+				position: absolute;
+				@include v-align;
+				left: -70px;
+				color: black;
+			}
+			p{
+				width: calc(100% - 110px);
+				@include fts(14,20);
+				font-weight: bold;
+				letter-spacing: 0.5px;
+			}
+			&--streng{
+				.concept-block__note-ttl{
+					width: 125px;
+				}
+				p{
+					width: calc(100% - 125px);
+				}
+			}
+		}
+		&__ct{
+			@include fts(18,30);
+			font-weight: bold;
+			letter-spacing: 0.5px;
+			margin-bottom: 120px;
+			p{
+				margin-bottom: 20px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			span{
+				@include font-size(24);
+				letter-spacing: 1px;
+			}
+			&--streng{
+				@include fts(36,40);
+				margin: 115px 0 -2px -70px;
+			}
+		}
+		&--streng{
+			padding-top: 0;
+		}
+	}
+	&-list{
+		margin: 0 -30px;
+		.slick-arrow{
+			width: 20px;
+			height: 53px;
+			z-index: 2;
+			&:before{
+				display: none;
+			}
+			&.slick-next{
+				right: -56px;
+				background: url("../img/next.png")no-repeat;
+				background-size: 100%;
+			}
+			&.slick-prev{
+				left: -56px;
+				background: url("../img/prev.png")no-repeat;
+				background-size: 100%;
+			}
+		}
+		&__item{
+			padding: 20px 30px;
+		}
+		&__box{
+			background: white;
+			box-shadow: 0 10px 10px 0 rgba(black,0.1);
+			@include fts(18,25);
+			color: black;
+		}
+		&__ct{
+			padding: 16px 20px;
+			ul{
+				margin-bottom: 10px;
+				li{
+					position: relative;
+					padding: 0 0 0 15px;
+					margin-bottom: 6px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+					&:before{
+						content: "・";
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+				}
+			}
+			&-note{
+				display: block;
+				font-weight: 900;
+			}
+		}
+	}
+}
+
+.sec-worries{
+	z-index: 1;
+	padding: 0 0 185px;
+	&:before{
+		content: "";
+		position: absolute;
+		top: -1425px;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background: url(../img/worries-bg.png) no-repeat;
+		background-size: cover;
+	}
+	.inner{
+		position: relative;
+		z-index: 1;
+	}
+}
+.worries{
+	&-ttl{
+		display: block;
+		text-align: right;
+		margin-bottom: 41px;
+		img{
+			right: -105px;
+		}
+	}
+	&-block{
+		@include flex(0,0,wrap);
+		&__heading{
+			width: 337px;
+			padding-right: 30px;
+			&-note{
+				display: block;
+				background: $blue;
+				color: white;
+				@include font-size(24);
+				line-height: 1.2;
+				font-weight: bold;
+				text-align: center;
+				padding: 23px 5px;
+				margin-bottom: 77px;
+			}
+			&-ttl{
+				@include flex(center,center,wrap);
+				@include fts(61.26,82.45);
+				font-weight: bold;
+				span{
+					-webkit-writing-mode: vertical-rl;
+					-ms-writing-mode: tb-rl;
+					writing-mode: vertical-rl;
+				}
+			}
+		}
+		&__ct{
+			width: calc(100% - 337px);
+			@include fts(24,40);
+			font-weight: 500;
+			text-align: justify;
+			padding: 151px 0 177px;
+			img{
+				width: 100%;
+				margin-bottom: 103px;
+			}
+		}
+		&__note{
+			text-align: center;
+			font-weight: bold;
+			@include fts(36,40);
+			width: 100%;
+			padding: 0 191px 0 0;
+		}
+	}
+}
+
+.streng{
+	&-list{
+		position: relative;
+		&__ttl{
+			position: absolute;
+			bottom: calc(100% - 6px);
+			right: 0;
+			img{
+				height: 136px;
+			}
+		}
+		&__item{
+			min-height: 977px;
+			position: relative;
+			.inner{
+				max-width: 1313px;
+			}
+			&--01{
+				background: url("../img/streng-bg-01.jpg")no-repeat;
+				background-size: cover;
+				background-position: top left;
+			}
+			&--02{
+				background: url("../img/streng-bg-02.jpg")no-repeat;
+				background-size: cover;
+				background-position: top right;
+				.inner{
+					max-width: 1761px;
+				}
+				.streng-block{
+					&__img{
+						order: 2;
+						padding: 15px 0 0 34px;
+						img{
+							margin: 0 0;
+						}
+						span{
+							bottom: 79px;
+							left: 66px;
+							right: 132px;
+						}
+					}
+					&__ct{
+						order: 1;
+						padding-left: 0;
+						padding-right: 6%;
+					}
+				}
+			}
+			&--03{
+				background: url("../img/streng-bg-03.jpg")no-repeat;
+				background-size: cover;
+				background-position: top left;
+				.streng-block{
+					&__img{
+						top: 36px;
+						span{
+							bottom: 75px;
+							right: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+	&-block{
+		@include flex(0,0,wrap);
+		padding: 35px 0 0;
+		&__img{
+			width: 36.5%;
+			position: relative;
+			span{
+				display: block;
+				background: black;
+				color: white;
+				@include font-size(30);
+				font-weight: 900;
+				text-align: center;
+				position: absolute;
+				bottom: 126px;
+				left: 30px;
+				right: 46px;
+				padding: 13px 10px;
+			}
+		}
+		&__ct{
+			width: 63.5%;
+			padding: 82px 0 0 4%;
+			max-width: 768px;
+			@include fts(20,42);
+			font-weight: 500;
+			&-reason{
+				display: block;
+				max-width: 347px;
+				background: black;
+				color: white;
+				@include font-size(30);
+				font-weight: 500;
+				line-height: 1;
+				text-align: center;
+				padding: 11px;
+				margin-bottom: 40px;
+			}
+			&-ttl{
+				display: block;
+				font-weight: 900;
+				@include fts(48,64);
+				margin-bottom: 31px;
+			}
+
+		}
+		&__other{
+			position: absolute;
+			bottom: 0;
+			right: 11%;
+			width: 42%;
+			span{
+				@include fts(18,28);
+				font-weight: 500;
+				position: absolute;
+				top: 107px;
+				right: 0;
+				width: 292px;
+				text-align: center;
+			}
+		}
+	}
+}
