@@ -200,6 +200,14 @@
 					width: calc(100% - 125px);
 				}
 			}
+			&--voice{
+				.concept-block__note-ttl{
+					width: 150px;
+				}
+				p{
+					width: calc(100% - 150px);
+				}
+			}
 		}
 		&__ct{
 			@include fts(18,30);
@@ -216,12 +224,26 @@
 				@include font-size(24);
 				letter-spacing: 1px;
 			}
-			&--streng{
+			.concept-block__ct-ttl{
+				display: block;
 				@include fts(36,40);
+				margin-bottom: 53px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			&--streng{
 				margin: 115px 0 -2px -70px;
+			}
+			&--voice{
+				margin: 126px 0 0 -25px;
+				line-height: 2.22222222222;
 			}
 		}
 		&--streng{
+			padding-top: 0;
+		}
+		&--voice{
 			padding-top: 0;
 		}
 	}
@@ -483,4 +505,7 @@
 			}
 		}
 	}
+}
+.sec-voice{
+	padding: 127px 0;
 }

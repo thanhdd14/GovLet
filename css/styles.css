@@ -1954,6 +1954,12 @@ textarea.form-control {
 .concept-block__note--streng p {
   width: calc(100% - 125px);
 }
+.concept-block__note--voice .concept-block__note-ttl {
+  width: 150px;
+}
+.concept-block__note--voice p {
+  width: calc(100% - 150px);
+}
 .concept-block__ct {
   font-size: 1.8rem;
   line-height: 1.6666666667;
@@ -1971,12 +1977,26 @@ textarea.form-control {
   font-size: 2.4rem;
   letter-spacing: 1px;
 }
-.concept-block__ct--streng {
+.concept-block__ct .concept-block__ct-ttl {
+  display: block;
   font-size: 3.6rem;
   line-height: 1.1111111111;
+  margin-bottom: 53px;
+}
+.concept-block__ct .concept-block__ct-ttl:last-child {
+  margin-bottom: 0;
+}
+.concept-block__ct--streng {
   margin: 115px 0 -2px -70px;
 }
+.concept-block__ct--voice {
+  margin: 126px 0 0 -25px;
+  line-height: 2.2222222222;
+}
 .concept-block--streng {
+  padding-top: 0;
+}
+.concept-block--voice {
   padding-top: 0;
 }
 .concept-list {
@@ -2258,5 +2278,9 @@ textarea.form-control {
   right: 0;
   width: 292px;
   text-align: center;
+}
+
+.sec-voice {
+  padding: 127px 0;
 }
 /*# sourceMappingURL=map/styles.css.map */
