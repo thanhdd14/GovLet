@@ -52,7 +52,18 @@ $(".js-concept-list").slick({
 	autoplay: false,
 	autoplaySpeed: 2000,
 });
-
+$(".js-voice-list").slick({
+	slidesToShow: 3,
+	slidesToScroll: 1,
+	autoplay: false,
+	autoplaySpeed: 2000,
+});
+$(".js-service-list").slick({
+	slidesToShow: 3,
+	slidesToScroll: 1,
+	autoplay: false,
+	autoplaySpeed: 2000,
+});
 
 
 
@@ -60,6 +71,9 @@ $(".js-concept-list").slick({
 jQuery(function ($) {
     $('.concept-list .concept-list__item .concept-list__box').matchHeight();
     $('.concept-list .concept-list__item .concept-list__box .concept-list__ct ul').matchHeight();
+	$('.voice-list .voice-list__item .voice-list__box').matchHeight();
+	$('.service-list .service-list__item .service-list__box').matchHeight();
+	$('.service-list .service-list__item .service-list__box .mh').matchHeight();
 });
 
 
