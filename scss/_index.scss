@@ -185,6 +185,9 @@
 				@include v-align;
 				left: -70px;
 				color: black;
+				&--shadow{
+					box-shadow: 1px 2px 5px 0 rgba(black,0.3);
+				}
 			}
 			p{
 				width: calc(100% - 110px);
@@ -208,14 +211,14 @@
 					width: calc(100% - 150px);
 				}
 			}
-			//&--service{
-			//	.concept-block__note-ttl{
-			//		width: 115px;
-			//	}
-			//	p{
-			//		width: calc(100% - 115px);
-			//	}
-			//}
+			&--thoughts{
+				.concept-block__note-ttl{
+					width: 190px;
+				}
+				p{
+					width: calc(100% - 190px);
+				}
+			}
 		}
 		&__ct{
 			@include fts(18,30);
@@ -261,6 +264,12 @@
 		}
 		&--service{
 			padding: 0 0 48px;
+		}
+		&--thoughts{
+			.concept-block__item{
+				max-width: 666px;
+			}
+			padding: 0 0 156px;
 		}
 	}
 	&-list{
@@ -630,12 +639,12 @@
 }
 .service-ttl{
 	position: absolute;
-	top: 100px;
+	top: 438px;
 	left: 0;
 	z-index: 3;
 }
 .service-list{
-	margin: 0 -38px;
+	margin: 0 -38px 217px;
 	.slick-arrow{
 		width: 20px;
 		height: 53px;
@@ -706,6 +715,328 @@
 			font-weight: 500;
 			height: 68px;
 			margin-bottom: 41px;
+		}
+	}
+}
+.service-step{
+	background: white;
+	padding: 0 0 24vw;
+	&__ttl{
+		display: block;
+		@include font-size(36);
+		line-height: 1.4;
+		font-weight: bold;
+		margin-bottom: 40px;
+	}
+}
+
+.step-list{
+	&__item{
+		background: $blue;
+		color: white;
+		@include flex(0,0,wrap);
+		margin-bottom: 36px;
+		min-height: 303px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__ct{
+		width: 50%;
+		position: relative;
+		z-index: 2;
+		@include fts(24,40);
+		padding: 35px;
+		&-number{
+			display: block;
+			@include font-size(36);
+			line-height: 1;
+			font-weight: bold;
+		}
+		&-ttl{
+			display: block;
+			@include font-size(36);
+			font-weight: bold;
+			line-height: 1.3;
+			margin-bottom: 19px;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: calc(100% - 1px);
+			bottom: 0;
+			width: 102px;
+			background: url("../img/af.png")no-repeat;
+			background-size: 100% 101%;
+		}
+	}
+	&__img{
+		width: 50%;
+		position: relative;
+		z-index: 1;
+		&-btn{
+			position: absolute;
+			bottom: 30px;
+			left: 70px;
+			right: 0;
+			margin: 0 auto;
+			max-width: 368px;
+			height: 74px;
+			background: #00c300;
+			color: white;
+			font-size: 2.8rem;
+			font-weight: bold;
+			line-height: 1.2;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 10px 0 74px;
+			&:before{
+				content: "";
+				width: 83px;
+				height: 80px;
+				background: url(../img/icon-line.png) no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 3px;
+			}
+			small{
+				@include font-size(24);
+			}
+		}
+	}
+}
+
+.sec-thoughts{
+	padding: 54px 0 18px;
+	&:before{
+		content: "";
+		position: absolute;
+		top: 433px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url("../img/thoughts-bg.png")no-repeat;
+		background-size: cover;
+		background-position: bottom right;
+	}
+	.inner{
+		position: relative;
+		z-index: 1;
+	}
+}
+.thoughts-ttl{
+	position: absolute;
+	@include v-align;
+	left: 0;
+}
+.thoughts-sns{
+	@include flex(0,center,wrap);
+	li{
+		margin-right: 18px;
+		&:last-child{
+			margin-right: 0;
+		}
+		a{
+			@include flex(0,center,wrap);
+			@include font-size(14);
+			color: black;
+			img{
+				width: 48px;
+				margin: 0 10px 0 0;
+			}
+		}
+	}
+}
+.thoughts-block{
+	@include flex(0,0,wrap);
+	margin-bottom: 63px;
+	&__ttl{
+		display: block;
+		width: 100%;
+		@include font-size(43);
+		font-weight: bold;
+		@include palt;
+		margin-bottom: 33px;
+	}
+	&__img{
+		width: 40%;
+		img{
+			margin-bottom: 45px;
+		}
+	}
+	&__ct{
+		width: 60%;
+		@include fts(24,43);
+		font-weight: 500;
+		padding: 50px 0 0 10%;
+		letter-spacing: 1px;
+	}
+}
+.thoughts-note{
+	@include flex(between,0,wrap);
+	@include fts(24,43);
+	&__ct{
+		width: 50%;
+		max-width: 450px;
+		&-ttl{
+			display: block;
+			font-weight: bold;
+			@include font-size(48);
+		}
+	}
+	&__img{
+		width: 50%;
+		max-width: 512px;
+		img{
+			width: 100%;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.sec-question{
+	background: white;
+	padding: 0 0 180px;
+}
+.question-ttl{
+	position: absolute;
+	top: 34px;
+	left: -15px;
+	img{
+		height: 189px;
+	}
+}
+.question-list{
+	max-width: 980px;
+	margin: 0 auto;
+	dl{
+		background: white;
+		@include fts(24,30);
+		font-weight: 500;
+		box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.3);
+		margin-bottom: 41px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		dt{
+			background: #e7ebf4;
+			padding: 27px 20px;
+		}
+		dd{
+			padding: 38px 20px;
+		}
+	}
+}
+
+.sec-inquiry{
+	padding: 0 0 194px;
+}
+.inquiry-ttl{
+	position: absolute;
+	top: 0;
+	right: 0;
+	img{
+		height: 189px;
+	}
+}
+.inquiry-block{
+	background: white;
+	padding: 30px 15px;
+	dl{
+		@include flex(between,start,wrap);
+		margin-bottom: 45px;
+		dt{
+			width: 300px;
+			@include font-size(18);
+			font-weight: 500;
+			position: relative;
+			padding: 9px 0 0 12px;
+			.required{
+				@include flex(center,center);
+				width: 55px;
+				height: 40px;
+				border-radius: 20px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				color: #d03226;
+				border: 1px solid #d03226;
+				@include font-size(12);
+			}
+		}
+		dd{
+			width: calc(100% - 300px);
+			padding: 0 0 0 20px;
+		}
+	}
+	&__ttl{
+		display: block;
+		@include font-size(18);
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 26px;
+	}
+	&__date{
+		@include flex(0,0,wrap);
+		margin: 0 -10px;
+		&-item{
+			width: 33.333%;
+			padding: 0 10px;
+			position: relative;
+			&:after{
+				content: "";
+				width: 8px;
+				height: 2px;
+				background: black;
+				position: absolute;
+				@include v-align;
+				right: -3px;
+			}
+			&:last-child{
+				&:after{
+					display: none;
+				}
+			}
+		}
+	}
+	&__note{
+		border: 1px solid #efefef;
+		@include fts(14,23);
+		padding: 20px;
+		max-height: 210px;
+		overflow-y: scroll;
+		margin-bottom: 17px;
+		&::-webkit-scrollbar {
+			width: 5px;
+		}
+
+		&::-webkit-scrollbar-track {
+			//box-shadow: inset 0 0 5px grey;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: #9e9e9e;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			background: #9e9e9e;
+		}
+		p{
+			margin-bottom: 20px;
+		}
+	}
+	&__check{
+		@include flex(center,center,wrap);
+		@include font-size(14);
+		font-weight: 500;
+		margin-bottom: 31px;
+		.c-btn__02{
+			margin: 0 5px 10px;
 		}
 	}
 }

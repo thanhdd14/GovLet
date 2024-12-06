@@ -76,9 +76,6 @@ Component
 
 //ttl
 .c-ttl{
-	&__01{
-
-	}
 	&__img{
 		img{
 			width: auto;
@@ -113,6 +110,26 @@ Component
 			position: absolute;
 			@include v-align;
 			right: 37px;
+		}
+	}
+	&__02{
+		@include flex(center,center,wrap);
+		text-align: center;
+		width: 100%;
+		max-width: 300px;
+		height: 52px;
+		background: $blue;
+		color: white;
+		@include font-size(18);
+		font-weight: bold;
+		line-height: 1.2;
+		border: none;
+		outline: none;
+		@include smooth-transition;
+		margin: 0 auto;
+		cursor: pointer;
+		&:hover{
+			opacity: 0.7;
 		}
 	}
 }

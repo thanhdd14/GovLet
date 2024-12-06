@@ -1,5 +1,42 @@
 @use "vars" as *;
 
 #footer{
-
+	background: $blue;
+	color: white;
+	padding: 37px 0 0;
+	a{
+		color: white;
+	}
+	.footer-block{
+		@include flex(between,center,wrap);
+		.footer-logo{
+			display: block;
+			width: 40%;
+			@include font-size(60);
+			font-weight: 900;
+			color: white;
+		}
+		.footer-nav{
+			width: 56%;
+			&__menu{
+				@include flex(0,0,wrap);
+				li{
+					margin: 0 42px 10px 0;
+					a{
+						display: block;
+						@include font-size(16);
+						font-weight: 400;
+					}
+				}
+			}
+		}
+	}
+	.copyright{
+		max-width: 1777px;
+		letter-spacing: 1px;
+		padding: 15px;
+		margin: 0 auto;
+		text-align: right;
+		@include font-size(16);
+	}
 }
