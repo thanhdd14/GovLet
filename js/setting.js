@@ -8,10 +8,6 @@ $('.js-mobile').on('click', function(){
 });
 
 
-// $(document).on("click", function(){
-// 	$("aa").hide();
-// });
-
 $(window).scroll(function () {
     if ($(this).scrollTop() > 10) {
         $("#header").addClass("js-fixed");
@@ -20,26 +16,6 @@ $(window).scroll(function () {
         $("#header").removeClass("js-fixed");
     }
 });
-
-//resize slider load page
-// var window_type;
-// var $window = $(window);
-// if ($window.width() <= 1024) {
-//     window_type = 'sp';
-// } else {
-//     window_type = 'pc';
-// }
-// $(window).resize(function() {
-//     if($window.width() <= 1024){
-//         if( (window_type != 'sp') ){
-//             location.reload();
-//         }
-//     }else{
-//         if(window_type != 'pc'){
-//             location.reload();
-//         }
-//     }
-// });
 
 
 
@@ -51,6 +27,14 @@ $(".js-concept-list").slick({
 	slidesToScroll: 1,
 	autoplay: false,
 	autoplaySpeed: 2000,
+	responsive: [
+		{
+			breakpoint: 834,
+			settings: {
+				slidesToShow: 2
+			}
+		}
+	]
 });
 $(".js-voice-list").slick({
 	slidesToShow: 3,

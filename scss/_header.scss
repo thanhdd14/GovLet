@@ -9,12 +9,22 @@
 	@include flex(between,center,wrap);
 	padding: 43px 3% 43px 4.5%;
 	@include smooth-transition;
+	@include mq(tb){
+		background: $blue;
+		position: static;
+		padding: 10px 33px 15px 28px;
+	}
 	.header-logo{
 		@include flex(0,center,wrap);
 		@include font-size(28);
 		font-weight: bold;
 		line-height: 1;
 		color: black;
+		@include mq(tb){
+			@include font-size(18);
+			color: white;
+			letter-spacing: 1px;
+		}
 		span{
 			@include font-size(14);
 			font-weight: 500;
@@ -23,32 +33,34 @@
 			padding: 7px 0 0;
 			margin: 0 0 0 29px;
 			letter-spacing: 0;
+			@include mq(tb){
+				@include font-size(8);
+				margin: 0 0 0 5px;
+				padding: 0;
+			}
 		}
 	}
 	.header-nav{
 		@include mq(tb-min){
 			@include flex(end,center,wrap);
 		}
-		@include mq(tb){
-			display: none;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			height: 100vh;
-			padding: 60px 20px 0;
-			overflow-y: scroll;
-			&.active{
-				display: block;
-			}
-		}
+		//@include mq(tb){
+		//	display: none;
+		//	position: absolute;
+		//	top: 0;
+		//	left: 0;
+		//	right: 0;
+		//	height: 100vh;
+		//	padding: 60px 20px 0;
+		//	overflow-y: scroll;
+		//}
 		&__menu{
 			display: flex;
 			flex-wrap: wrap;
 			align-items: flex-end;
 			margin-right: 15px;
 			@include mq(tb){
-				display: block;
+				display: none;
 			}
 			&-item{
 				>a{
@@ -70,6 +82,13 @@
 			line-height: 1;
 			width: 167px;
 			height: 42px;
+			@include mq(tb){
+				background: $yellow;
+				color: black;
+				width: 83px;
+				height: 21px;
+				@include font-size(8.03);
+			}
 		}
 	}
 	.js-mobile {
@@ -81,9 +100,9 @@
 		cursor: pointer;
 		z-index: 12;
 		display: none;
-		@include mq(tb){
-			display: block;
-		}
+		//@include mq(tb){
+		//	display: block;
+		//}
 		span{
 			position: absolute;
 			@include v-align;
@@ -135,24 +154,28 @@
 		}
 	}
 	&.js-fixed{
-		background: $blue;
-		padding: 20px 3% 20px 4.5%;
-		.header-logo{
-			color: white;
-		}
-		.header-nav{
-			&__menu{
-				li{
-					a{
-						color: white;
+
+		@include mq(tb-min){
+			background: $blue;
+			padding: 20px 3% 20px 4.5%;
+			.header-logo{
+				color: white;
+			}
+			.header-nav{
+				&__menu{
+					li{
+						a{
+							color: white;
+						}
 					}
 				}
-			}
-			&__inquiry{
-				background: $yellow;
-				color: black;
+				&__inquiry{
+					background: $yellow;
+					color: black;
+				}
 			}
 		}
+
 	}
 }
 

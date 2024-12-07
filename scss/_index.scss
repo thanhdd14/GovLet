@@ -7,19 +7,42 @@
 	background-position: bottom center;
 	padding: 230px 15px 150px 5%;
 	z-index: 3;
+	@include mq(){
+		background: none;
+		min-height: 100px;
+		padding: 0;
+	}
+}
+.mv-bg{
+	img{
+		width: 100%;
+	}
 }
 
 .mv-block{
+	@include mq(){
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
 	&__note{
 		@include fts(14,20);
 		font-weight: 500;
 		letter-spacing: 1px;
 		max-width: 265px;
+		@include mq(){
+			display: none;
+		}
 		&-ttl{
 			display: block;
 			font-weight: bold;
 			@include fts(16,22);
 			margin-bottom: 20px;
+			@include mq(){
+				@include fts(4.67,12.64);
+			}
 		}
 	}
 	&__line{
@@ -28,6 +51,12 @@
 		right: 13px;
 		width: 368px;
 		z-index: 2;
+		@include mq(){
+			width: 148px;
+			height: 65px;
+			bottom: 0;
+			right: 0;
+		}
 		&-box{
 			background: $blue;
 			color: white;
@@ -36,8 +65,19 @@
 			padding: 15px 16px;
 			text-align: center;
 			letter-spacing: 2px;
+			@include mq(){
+				@include fts(9.67,12.64);
+				padding: 4px 7px 7px;
+				letter-spacing: 1px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
 			p{
 				margin-bottom: 15px;
+				@include mq(){
+					margin-bottom: 5px;
+				}
 			}
 			a{
 				display: block;
@@ -47,6 +87,11 @@
 				@include font-size(22.59);
 				text-align: left;
 				padding: 17px 5px 16px 100px;
+				@include mq(){
+					@include font-size(9.67);
+					padding: 6px 0 6px 36px;
+					letter-spacing: 0;
+				}
 				&:before{
 					content: "";
 					width: 66px;
@@ -56,6 +101,11 @@
 					position: absolute;
 					@include v-align;
 					left: 20px;
+					@include mq(){
+						width: 29px;
+						height: 27px;
+						left: 0;
+					}
 				}
 			}
 		}
@@ -64,6 +114,9 @@
 			text-align: justify;
 			@include fts(14,20);
 			position: relative;
+			@include mq(){
+				display: none;
+			}
 			&-ttl{
 				display: block;
 				position: absolute;
@@ -90,6 +143,10 @@
 			left: 2.5%;
 			top: 47%;
 			width: 28.85%;
+			@include mq(){
+				left: -8px;
+				top: 21%;
+			}
 		}
 		&-02{
 			display: block;
@@ -97,6 +154,11 @@
 			right: 1%;
 			top: 22%;
 			width: 50%;
+			@include mq(){
+				right: 0;
+				top: 11%;
+				width: 52%;
+			}
 		}
 	}
 }
@@ -105,6 +167,10 @@
 	padding: 150px 0 0;
 	z-index: 2;
 	margin-bottom: -48px;
+	@include mq(){
+		padding: 40px 0 0;
+		margin-bottom: -27px;
+	}
 }
 
 .concept{
@@ -113,7 +179,10 @@
 		top: -12px;
 		left: 0;
 		z-index: 3;
-
+		@include mq(){
+			top: 3px;
+			left: -6px;
+		}
 	}
 	&-item{
 		position: absolute;
@@ -121,19 +190,33 @@
 			left: 0;
 			top: 46px;
 			width: 18.3%;
+			@include mq(){
+				top: 13px;
+				width: 76%;
+			}
 		}
 		&--02{
 			right: 0;
-			top: 130px;
-			width: 50%;
+			top: 236px;
+			width: 55%;
+			@include mq(){
+				top: 292px;
+				width: 54%;
+			}
 		}
 	}
 	&-block{
 		position: relative;
 		padding: 114px 0 86px;
+		@include mq(){
+			padding: 180px 0 3px;
+		}
 		&__ttl{
 			@include fts(48,71);
 			font-weight: bold;
+			@include mq(){
+				@include fts(18,25.21)
+			}
 			span{
 				-webkit-writing-mode: vertical-rl;
 				-ms-writing-mode: tb-rl;
@@ -146,12 +229,20 @@
 			}
 			&--bottom{
 				padding: 0 0 0 0;
+				@include mq(){
+					@include fts(13.57,20.07);
+					padding: 6px 0 0 16px;
+				}
 			}
 		}
 		&__item{
 			max-width: 625px;
 			margin-bottom: 195px;
 			padding: 0 0 0 170px;
+			@include mq(){
+				padding: 0 0 0 43px;
+				margin-bottom: 64px;
+			}
 			&:last-child{
 				margin-bottom: 0;
 			}
@@ -159,6 +250,9 @@
 		&__note{
 			@include flex(0,start,wrap);
 			margin-bottom: 64px;
+			@include mq(){
+				margin-bottom: 4px;
+			}
 			&:last-child{
 				margin-bottom: 0;
 			}
@@ -171,6 +265,11 @@
 				position: relative;
 				padding: 14px 0;
 				letter-spacing: 1px;
+				@include mq(){
+					@include font-size(10);
+					width: 110px;
+					padding: 14px 0 14px 47px;
+				}
 			}
 			&-number{
 				width: 57px;
@@ -185,6 +284,12 @@
 				@include v-align;
 				left: -70px;
 				color: black;
+				@include mq(){
+					@include font-size(12);
+					width: 38px;
+					height: 38px;
+					left: 0;
+				}
 				&--shadow{
 					box-shadow: 1px 2px 5px 0 rgba(black,0.3);
 				}
@@ -194,6 +299,12 @@
 				@include fts(14,20);
 				font-weight: bold;
 				letter-spacing: 0.5px;
+				@include mq(){
+					@include fts(6,11);
+					max-width: 155px;
+					letter-spacing: 1px;
+					padding: 2px 0 0;
+				}
 			}
 			&--streng{
 				.concept-block__note-ttl{
@@ -225,8 +336,17 @@
 			font-weight: bold;
 			letter-spacing: 0.5px;
 			margin-bottom: 120px;
+			@include mq(){
+				max-width: 265px;
+				font-size: 10px;
+				line-height: 3;
+				margin-bottom: 17px;
+			}
 			p{
 				margin-bottom: 20px;
+				@include mq(){
+					margin-bottom: 13px;
+				}
 				&:last-child{
 					margin-bottom: 0;
 				}
@@ -234,6 +354,11 @@
 			span{
 				@include font-size(24);
 				letter-spacing: 1px;
+				@include mq(){
+					display: block;
+					@include font-size(16);
+					margin-bottom: -10px;
+				}
 			}
 			.concept-block__ct-ttl{
 				display: block;
@@ -274,10 +399,17 @@
 	}
 	&-list{
 		margin: 0 -30px;
+		@include mq(){
+			margin: 0;
+		}
 		.slick-arrow{
 			width: 20px;
 			height: 53px;
 			z-index: 2;
+			@include mq(){
+				width: 11px;
+				height: 29px;
+			}
 			&:before{
 				display: none;
 			}
@@ -285,30 +417,52 @@
 				right: -56px;
 				background: url("../img/next.png")no-repeat;
 				background-size: 100%;
+				@include mq(){
+					right: -7px;
+				}
 			}
 			&.slick-prev{
 				left: -56px;
 				background: url("../img/prev.png")no-repeat;
 				background-size: 100%;
+				@include mq(){
+					left: -7px;
+				}
 			}
 		}
 		&__item{
 			padding: 20px 30px;
+			@include mq(){
+				padding: 20px 14px;
+			}
 		}
 		&__box{
 			background: white;
 			box-shadow: 0 10px 10px 0 rgba(black,0.1);
 			@include fts(18,25);
 			color: black;
+			@include mq(){
+				@include fts(7.99,11.09);
+			}
 		}
 		&__ct{
 			padding: 16px 20px;
+			@include mq(){
+				padding: 6px 7px;
+			}
 			ul{
 				margin-bottom: 10px;
+				@include mq(){
+					margin-bottom: 4px;
+				}
 				li{
 					position: relative;
 					padding: 0 0 0 15px;
 					margin-bottom: 6px;
+					@include mq(){
+						padding: 0 0 0 10px;
+						margin-bottom: 3px;
+					}
 					&:last-child{
 						margin-bottom: 0;
 					}
@@ -353,6 +507,9 @@
 		margin-bottom: 41px;
 		img{
 			right: -105px;
+			@include mq(){
+				right: -21px;
+			}
 		}
 	}
 	&-block{
