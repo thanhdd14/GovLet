@@ -193,6 +193,7 @@
 			@include mq(){
 				top: 13px;
 				width: 76%;
+				max-width: 296px;
 			}
 		}
 		&--02{
@@ -202,6 +203,7 @@
 			@include mq(){
 				top: 292px;
 				width: 54%;
+				max-width: 210px;
 			}
 		}
 	}
@@ -336,11 +338,20 @@
 				}
 			}
 			&--thoughts{
+				@include mq(){
+					align-items: center;
+				}
 				.concept-block__note-ttl{
 					width: 190px;
+					@include mq(){
+						width: 110px;
+					}
 				}
 				p{
 					width: calc(100% - 190px);
+					@include mq(){
+						width: calc(100% - 110px);
+					}
 				}
 			}
 			&--service{
@@ -452,6 +463,9 @@
 				max-width: 666px;
 			}
 			padding: 0 0 156px;
+			@include mq(){
+				padding: 0 0 42px;
+			}
 		}
 	}
 	&-list{
@@ -675,7 +689,7 @@
 				bottom: 100%;
 			}
 			img{
-				height: 136px;
+				height: clamp(28px,7.08333vw,136px);
 				@include mq(){
 					height: 28px;
 				}
@@ -997,8 +1011,9 @@
 		background-position: top left;
 		@include mq(){
 			background: url(../img/service-bf-sp.png) no-repeat;
-			background-size: 100%;
+			background-size: 100% 100%;
 			background-position: top left;
+			bottom: -131px;
 		}
 	}
 	.inner{
@@ -1139,22 +1154,39 @@
 .service-step{
 	background: white;
 	padding: 0 0 24vw;
+	@include mq(){
+		background: none;
+		padding: 0;
+	}
 	&__ttl{
 		display: block;
 		@include font-size(36);
 		line-height: 1.4;
 		font-weight: bold;
 		margin-bottom: 40px;
+		@include mq(){
+			@include font-size(12.26);
+			padding: 0 0 0 14px;
+			margin-bottom: 13px;
+		}
 	}
 }
 
 .step-list{
+	@include mq(){
+		margin: 0 -15px;
+	}
 	&__item{
 		background: $blue;
 		color: white;
 		@include flex(0,0,wrap);
 		margin-bottom: 36px;
+		position: relative;
 		min-height: 303px;
+		@include mq(){
+			margin-bottom: 13px;
+			min-height: 100px;
+		}
 		&:last-child{
 			margin-bottom: 0;
 		}
@@ -1165,11 +1197,18 @@
 		z-index: 2;
 		@include fts(24,40);
 		padding: 35px;
+		@include mq(){
+			@include fts(8.17,13.62);
+			padding: 12px 0 12px 7%;
+		}
 		&-number{
 			display: block;
 			@include font-size(36);
 			line-height: 1;
 			font-weight: bold;
+			@include mq(){
+				@include font-size(12.26);
+			}
 		}
 		&-ttl{
 			display: block;
@@ -1177,6 +1216,10 @@
 			font-weight: bold;
 			line-height: 1.3;
 			margin-bottom: 19px;
+			@include mq(){
+				@include font-size(12.26);
+				margin-bottom: 6px;
+			}
 		}
 		&:after{
 			content: "";
@@ -1187,12 +1230,23 @@
 			width: 102px;
 			background: url("../img/af.png")no-repeat;
 			background-size: 100% 101%;
+			@include mq(){
+				width: 33px;
+			}
 		}
 	}
 	&__img{
 		width: 50%;
-		position: relative;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
 		z-index: 1;
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 		&-btn{
 			position: absolute;
 			bottom: 30px;
@@ -1211,6 +1265,14 @@
 			justify-content: center;
 			align-items: center;
 			padding: 0 10px 0 74px;
+			@include mq(){
+				@include font-size(9.61);
+				max-width: 125px;
+				height: 25px;
+				left: 2px;
+				bottom: 13px;
+				padding: 0 0 0 26px;
+			}
 			&:before{
 				content: "";
 				width: 83px;
@@ -1221,9 +1283,16 @@
 				top: 50%;
 				transform: translateY(-50%);
 				left: 3px;
+				@include mq(){
+					width: 27px;
+					height: 23px;
+				}
 			}
 			small{
 				@include font-size(24);
+				@include mq(){
+					@include font-size(8.17);
+				}
 			}
 		}
 	}
@@ -1241,6 +1310,9 @@
 		background: url("../img/thoughts-bg.png")no-repeat;
 		background-size: cover;
 		background-position: bottom right;
+		@include mq(){
+			display: none;
+		}
 	}
 	.inner{
 		position: relative;
@@ -1251,9 +1323,17 @@
 	position: absolute;
 	@include v-align;
 	left: 0;
+	@include mq(){
+		top: 223px;
+		transform: translateY(0);
+		width: 50px;
+	}
 }
 .thoughts-sns{
 	@include flex(0,center,wrap);
+	@include mq(){
+		justify-content: center;
+	}
 	li{
 		margin-right: 18px;
 		&:last-child{
@@ -1263,9 +1343,15 @@
 			@include flex(0,center,wrap);
 			@include font-size(14);
 			color: black;
+			@include mq(){
+				@include font-size(7.93);
+			}
 			img{
 				width: 48px;
 				margin: 0 10px 0 0;
+				@include mq(){
+					width: 27px;
+				}
 			}
 		}
 	}
@@ -1280,11 +1366,25 @@
 		font-weight: bold;
 		@include palt;
 		margin-bottom: 33px;
+		@include mq(){
+			@include font-size(18);
+			padding: 0 0 0 42px;
+			margin-bottom: 58px;
+		}
 	}
 	&__img{
 		width: 40%;
+		@include mq(){
+			margin-bottom: 46px;
+			width: 100%;
+		}
 		img{
+			display: block;
 			margin-bottom: 45px;
+			@include mq(){
+				width: 65%;
+				margin: 0 auto 33px;
+			}
 		}
 	}
 	&__ct{
@@ -1293,26 +1393,54 @@
 		font-weight: 500;
 		padding: 50px 0 0 10%;
 		letter-spacing: 1px;
+		@include mq(){
+			@include font-size(18);
+			width: 100%;
+			padding: 0 14px;
+			line-height: 2.28;
+			letter-spacing: 0;
+		}
 	}
 }
 .thoughts-note{
 	@include flex(between,0,wrap);
 	@include fts(24,43);
+	@include mq(){
+		@include font-size(14.09);
+		padding: 0 13px;
+	}
 	&__ct{
 		width: 50%;
 		max-width: 450px;
+		@include mq(){
+			width: 100%;
+			margin-bottom: 20px;
+		}
 		&-ttl{
 			display: block;
 			font-weight: bold;
 			@include font-size(48);
+			@include mq(){
+				@include font-size(28.19);
+				line-height: 1.2;
+				padding-top: 5px;
+			}
 		}
 	}
 	&__img{
 		width: 50%;
 		max-width: 512px;
+		font-weight: 500;
+		@include mq(){
+			width: 100%;
+			@include font-size(12);
+		}
 		img{
 			width: 100%;
 			margin-bottom: 15px;
+			@include mq(){
+				margin-bottom: 5px;
+			}
 		}
 	}
 }
@@ -1320,46 +1448,90 @@
 .sec-question{
 	background: white;
 	padding: 0 0 180px;
+	@include mq(){
+		padding: 20px 0 50px;
+		.concept-block{
+			padding: 0 0 38px;
+		}
+	}
 }
 .question-ttl{
 	position: absolute;
 	top: 34px;
-	left: -15px;
+	left: 0;
+	@include mq(){
+		left: auto;
+		right: 0;
+		top: 48px;
+	}
 	img{
-		height: 189px;
+		height: clamp(64px,9.84375vw,189px);
 	}
 }
 .question-list{
 	max-width: 980px;
 	margin: 0 auto;
+	@include mq(){
+		padding: 0 15px;
+	}
 	dl{
 		background: white;
 		@include fts(24,30);
 		font-weight: 500;
 		box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.3);
 		margin-bottom: 41px;
+		@include mq(){
+			@include fts(10,12);
+			margin-bottom: 17px;
+		}
 		&:last-child{
 			margin-bottom: 0;
 		}
 		dt{
+			position: relative;
 			background: #e7ebf4;
 			padding: 27px 20px;
+			@include mq(){
+				min-height: 32px;
+				padding: 4px 26px;
+				@include flex(0,center,wrap);
+				text-indent: -10px;
+			}
+
 		}
 		dd{
 			padding: 38px 20px;
+			position: relative;
+			@include mq(){
+				padding: 15px 10px 15px 27px;
+				text-indent: -10px;
+			}
 		}
 	}
 }
 
 .sec-inquiry{
 	padding: 0 0 194px;
+	@include mq(){
+		padding: 15px 0 50px;
+		.concept-block{
+			padding: 0 0 40px;
+			margin: 0 -15px;
+			.concept-block__note-ttl{
+				margin-bottom: 15px;
+			}
+		}
+		.inner{
+			padding: 0 30px;
+		}
+	}
 }
 .inquiry-ttl{
 	position: absolute;
 	top: 0;
 	right: 0;
 	img{
-		height: 189px;
+		height: clamp(37px, 9.84375vw, 189px);
 	}
 }
 .inquiry-block{
@@ -1368,28 +1540,54 @@
 	dl{
 		@include flex(between,start,wrap);
 		margin-bottom: 45px;
+		@include mq(){
+			margin-bottom: 20px;
+		}
 		dt{
 			width: 300px;
 			@include font-size(18);
 			font-weight: 500;
 			position: relative;
 			padding: 9px 0 0 12px;
+			@include mq(){
+				width: 100%;
+				padding: 0;
+				@include font-size(12.95);
+				color: #00072d;
+				@include flex(between,center,wrap);
+				margin-bottom: 10px;
+			}
 			.required{
 				@include flex(center,center);
 				width: 55px;
 				height: 40px;
 				border-radius: 20px;
-				position: absolute;
-				top: 0;
-				right: 0;
 				color: #d03226;
 				border: 1px solid #d03226;
 				@include font-size(12);
+				@include mq(md-min){
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+				@include mq(){
+					height: 37px;
+				}
 			}
 		}
 		dd{
 			width: calc(100% - 300px);
 			padding: 0 0 0 20px;
+			@include mq(){
+				width: 100%;
+				padding: 0;
+			}
+			.form-control{
+				margin-bottom: 10px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 	&__ttl{
@@ -1398,10 +1596,18 @@
 		font-weight: bold;
 		text-align: center;
 		margin-bottom: 26px;
+		@include mq(){
+			@include font-size(16);
+			color: #00072d;
+			margin-bottom: 15px;
+		}
 	}
 	&__date{
 		@include flex(0,0,wrap);
-		margin: 0 -10px;
+		margin: 0 -10px 10px;
+		&:last-child{
+			margin-bottom: 0;
+		}
 		&-item{
 			width: 33.333%;
 			padding: 0 10px;
@@ -1427,25 +1633,27 @@
 		@include fts(14,23);
 		padding: 20px;
 		max-height: 210px;
-		overflow-y: scroll;
 		margin-bottom: 17px;
-		&::-webkit-scrollbar {
-			width: 5px;
+		@include mq(){
+			@include fts(9,12);
+			padding: 15px;
 		}
-
-		&::-webkit-scrollbar-track {
-			//box-shadow: inset 0 0 5px grey;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background: #9e9e9e;
-		}
-
-		&::-webkit-scrollbar-thumb:hover {
-			background: #9e9e9e;
-		}
+		//&::-webkit-scrollbar {
+		//	width: 5px;
+		//}
+		//&::-webkit-scrollbar-thumb {
+		//	background: #9e9e9e;
+		//}
+		//
+		//&::-webkit-scrollbar-thumb:hover {
+		//	background: #9e9e9e;
+		//}
 		p{
 			margin-bottom: 20px;
+		}
+		.slimScrollBar {
+			opacity: 1 !important;
+			background: #9e9e9e !important;
 		}
 	}
 	&__check{
@@ -1453,8 +1661,26 @@
 		@include font-size(14);
 		font-weight: 500;
 		margin-bottom: 31px;
+		@include mq(){
+			@include font-size(12);
+		}
+
+	}
+	.error{
+		display: block;
+		color: #fe0000;
+		@include font-size(12);
+		@include mq(){
+			@include font-size(10);
+		}
+	}
+	&__sub{
+		@include flex(center,center,wrap);
 		.c-btn__02{
 			margin: 0 5px 10px;
 		}
 	}
+}
+.slimScrollDiv{
+	height: 210px !important;
 }

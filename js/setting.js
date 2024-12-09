@@ -18,7 +18,11 @@ $(window).scroll(function () {
 });
 
 
-
+jQuery('.js-scroll').click(function(e) {
+	jQuery('html,body').animate({ scrollTop: jQuery(this.hash).offset().top - 82}, 1500);
+	return false;
+	e.preventDefault();
+});
 
 
 
@@ -76,42 +80,6 @@ jQuery(function ($) {
 	$('.service-list .service-list__item .service-list__box .mh').matchHeight();
 });
 
-
-
-//fade
-// $(window).on('scroll load assessFeatureHeaders', function(){
-//     var scrollTop = $(window).scrollTop();
-//     var appearenceBuffer = 60;
-//     var windowBottom = scrollTop + $(window).height() - appearenceBuffer;
-//     $('body').toggleClass('scrolled-down', scrollTop > 0);
-//     $('.js-scrollin:not(.active)').filter(function(){
-//         var offset = $(this).offset().top;
-//         var height = $(this).outerHeight();
-//         return offset + height >= scrollTop && offset <= windowBottom;
-//     }).addClass('active');
-// });
-
-
-//backtop
-// jQuery(document).ready(function ($) {
-//     $(".js-backtop").hide();
-//     $(window).on("scroll", function () {
-//         if($(window).scrollTop()> $("#footer").offset().top - $(window).outerHeight()){
-//             $(".js-backtop").addClass("active");
-//         }
-//         else {
-//             $(".js-backtop").removeClass("active");
-//         }
-//         if ($(this).scrollTop() > 100) {
-//             $(".js-backtop").fadeIn("fast");
-//         } else {
-//             $(".js-backtop").fadeOut("fast");
-//         }
-//     });
-//     $('.js-backtop').click(function () {
-//         $('body,html').animate({
-//             scrollTop: 0
-//         }, 500);
-//         return false;
-//     });
-// });
+$(function(){
+	$('.inquiry-block__note').slimScroll();
+});

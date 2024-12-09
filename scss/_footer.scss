@@ -15,17 +15,30 @@
 			@include font-size(60);
 			font-weight: 900;
 			color: white;
+			@include mq(){
+				width: 100px;
+				@include font-size(18);
+			}
 		}
 		.footer-nav{
 			width: 56%;
+			@include mq(){
+				width: calc(100% - 100px);
+			}
 			&__menu{
 				@include flex(0,0,wrap);
 				li{
 					margin: 0 42px 10px 0;
+					@include mq(){
+						margin: 0 17px 10px 0;
+					}
 					a{
 						display: block;
 						@include font-size(16);
 						font-weight: 400;
+						@include mq(){
+							@include font-size(7.36);
+						}
 					}
 				}
 			}
@@ -38,5 +51,8 @@
 		margin: 0 auto;
 		text-align: right;
 		@include font-size(16);
+		@include mq(){
+			@include font-size(6);
+		}
 	}
 }
