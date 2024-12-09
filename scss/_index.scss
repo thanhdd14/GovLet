@@ -269,6 +269,7 @@
 					@include font-size(10);
 					width: 110px;
 					padding: 14px 0 14px 47px;
+					letter-spacing: 0;
 				}
 			}
 			&-number{
@@ -309,17 +310,29 @@
 			&--streng{
 				.concept-block__note-ttl{
 					width: 125px;
+					@include mq(){
+						padding-top: 10px;
+					}
 				}
 				p{
 					width: calc(100% - 125px);
 				}
 			}
 			&--voice{
+				@include mq(){
+					align-items: center;
+				}
 				.concept-block__note-ttl{
 					width: 150px;
+					@include mq(){
+						width: 111px;
+					}
 				}
 				p{
 					width: calc(100% - 150px);
+					@include mq(){
+						width: calc(100% - 111px);
+					}
 				}
 			}
 			&--thoughts{
@@ -328,6 +341,13 @@
 				}
 				p{
 					width: calc(100% - 190px);
+				}
+			}
+			&--service{
+				@include mq(){
+					p{
+						padding: 0 6% 0 0;
+					}
 				}
 			}
 		}
@@ -364,31 +384,68 @@
 				display: block;
 				@include fts(36,40);
 				margin-bottom: 53px;
+				@include mq(){
+					@include fts(7.33,8.14);
+				}
 				&:last-child{
 					margin-bottom: 0;
 				}
 			}
 			&--streng{
 				margin: 115px 0 -2px -70px;
+				@include mq(){
+					margin: 15px 0 0 0;
+					padding: 0 0 0 47px;
+				}
 			}
 			&--voice{
 				margin: 126px 0 0 -25px;
 				line-height: 2.22222222222;
+				@include mq(){
+					margin: 10px 0 0 0;
+					@include fts(10,15);
+					padding: 0 20% 0 0;
+					.concept-block__ct-ttl{
+						@include font-size(12);
+						margin-bottom: 17px;
+					}
+				}
 			}
 			&--service{
 				margin: 0 0 0 -64px;
 				line-height: 2.22222222222;
+				@include mq(){
+					margin: 0;
+					.concept-block__ct-ttl{
+						@include font-size(13.25);
+					}
+				}
 			}
 		}
 		&--streng{
 			padding-top: 0;
+			@include mq(){
+				margin-bottom: 14px;
+			}
 		}
 		&--voice{
 			padding-top: 0;
 			margin-bottom: 129px;
+			@include mq(){
+				margin-bottom: 44px;
+				.concept-block__ttl--top{
+					@include fts(15.46,22.87);
+					top: 40px;
+					right: 14px;
+					letter-spacing: 1px;
+				}
+			}
 		}
 		&--service{
 			padding: 0 0 48px;
+			@include mq(){
+				padding: 0;
+			}
 		}
 		&--thoughts{
 			.concept-block__item{
@@ -485,6 +542,9 @@
 .sec-worries{
 	z-index: 1;
 	padding: 0 0 185px;
+	@include mq(){
+		padding: 0 0 31px;
+	}
 	&:before{
 		content: "";
 		position: absolute;
@@ -494,6 +554,11 @@
 		bottom: 0;
 		background: url(../img/worries-bg.png) no-repeat;
 		background-size: cover;
+		@include mq(){
+			background: url(../img/worries-bg-sp.png) no-repeat;
+			background-size: cover;
+			top: -288px;
+		}
 	}
 	.inner{
 		position: relative;
@@ -505,6 +570,9 @@
 		display: block;
 		text-align: right;
 		margin-bottom: 41px;
+		@include mq(){
+			margin-bottom: 37px;
+		}
 		img{
 			right: -105px;
 			@include mq(){
@@ -517,6 +585,12 @@
 		&__heading{
 			width: 337px;
 			padding-right: 30px;
+			@include mq(){
+				@include flex(center,center,wrap);
+				width: 100%;
+				padding: 0 0 0 13px;
+				margin: 0 0 26px;
+			}
 			&-note{
 				display: block;
 				background: $blue;
@@ -527,15 +601,27 @@
 				text-align: center;
 				padding: 23px 5px;
 				margin-bottom: 77px;
+				@include mq(){
+					@include font-size(6.78);
+					width: 86px;
+					padding: 5px 0;
+					margin-bottom: 0;
+				}
 			}
 			&-ttl{
 				@include flex(center,center,wrap);
 				@include fts(61.26,82.45);
 				font-weight: bold;
+				@include mq(){
+					@include font-size(18);
+					width: calc(100% - 86px);
+				}
 				span{
-					-webkit-writing-mode: vertical-rl;
-					-ms-writing-mode: tb-rl;
-					writing-mode: vertical-rl;
+					@include mq(md-min){
+						-webkit-writing-mode: vertical-rl;
+						-ms-writing-mode: tb-rl;
+						writing-mode: vertical-rl;
+					}
 				}
 			}
 		}
@@ -545,9 +631,18 @@
 			font-weight: 500;
 			text-align: justify;
 			padding: 151px 0 177px;
+			@include mq(){
+				width: 100%;
+				padding: 0 18%;
+				@include fts(12,24);
+				margin: 0 0 85px;
+			}
 			img{
 				width: 100%;
 				margin-bottom: 103px;
+				@include mq(){
+					margin-bottom: 17px;
+				}
 			}
 		}
 		&__note{
@@ -556,10 +651,19 @@
 			@include fts(36,40);
 			width: 100%;
 			padding: 0 191px 0 0;
+			@include mq(){
+				@include fts(10.17,11.3);
+				padding: 0;
+			}
 		}
 	}
 }
 
+.sec-strengths {
+	@include mq(){
+		padding: 10px 0 0;
+	}
+}
 .streng{
 	&-list{
 		position: relative;
@@ -567,13 +671,22 @@
 			position: absolute;
 			bottom: calc(100% - 6px);
 			right: 0;
+			@include mq(){
+				bottom: 100%;
+			}
 			img{
 				height: 136px;
+				@include mq(){
+					height: 28px;
+				}
 			}
 		}
 		&__item{
 			min-height: 977px;
 			position: relative;
+			@include mq(){
+				min-height: 198px;
+			}
 			.inner{
 				max-width: 1313px;
 			}
@@ -590,9 +703,17 @@
 					max-width: 1761px;
 				}
 				.streng-block{
+					@include mq(){
+						padding-left: 0;
+					}
 					&__img{
 						order: 2;
 						padding: 15px 0 0 34px;
+						@include mq(){
+							padding: 10px 0 0 0;
+							width: 35%;
+							margin: 0 0 -6px 0;
+						}
 						img{
 							margin: 0 0;
 						}
@@ -600,12 +721,21 @@
 							bottom: 79px;
 							left: 66px;
 							right: 132px;
+							@include mq(){
+								bottom: 22px;
+								left: 6px;
+								right: 2px;
+							}
 						}
 					}
 					&__ct{
 						order: 1;
 						padding-left: 0;
 						padding-right: 6%;
+						@include mq(){
+							padding-right: 15px;
+							width: 61%;
+						}
 					}
 				}
 			}
@@ -616,9 +746,23 @@
 				.streng-block{
 					&__img{
 						top: 36px;
+						@include mq(){
+							top: auto;
+						}
 						span{
 							bottom: 75px;
 							right: 20px;
+							@include mq(){
+								bottom: 24px;
+								right: -13px;
+							}
+						}
+					}
+					&__ct{
+						&-ttl{
+							@include mq(){
+								margin-bottom: 10px;
+							}
 						}
 					}
 				}
@@ -628,9 +772,16 @@
 	&-block{
 		@include flex(0,0,wrap);
 		padding: 35px 0 0;
+		@include mq(){
+			padding: 0 0 0 14px;
+		}
 		&__img{
 			width: 36.5%;
 			position: relative;
+			@include mq(){
+				width: 27.5%;
+				padding: 12px 0 0;
+			}
 			span{
 				display: block;
 				background: black;
@@ -643,6 +794,13 @@
 				left: 30px;
 				right: 46px;
 				padding: 13px 10px;
+				@include mq(){
+					@include font-size(8);
+					left: 0;
+					right: 0;
+					bottom: 32px;
+					padding: 3px;
+				}
 			}
 		}
 		&__ct{
@@ -651,6 +809,11 @@
 			max-width: 768px;
 			@include fts(20,42);
 			font-weight: 500;
+			@include mq(){
+				width: 72.5%;
+				@include fts(8,12);
+				padding: 12px 0 10px 29px;
+			}
 			&-reason{
 				display: block;
 				max-width: 347px;
@@ -662,12 +825,22 @@
 				text-align: center;
 				padding: 11px;
 				margin-bottom: 40px;
+				@include mq(){
+					max-width: 71px;
+					@include font-size(8);
+					padding: 3px;
+					margin-bottom: 14px;
+				}
 			}
 			&-ttl{
 				display: block;
 				font-weight: 900;
 				@include fts(48,64);
 				margin-bottom: 31px;
+				@include mq(){
+					@include fts(14,16);
+					margin-bottom: 19px;
+				}
 			}
 
 		}
@@ -690,6 +863,9 @@
 }
 .sec-voice{
 	padding: 127px 0 84px;
+	@include mq(){
+		padding: 32px 0 24px;
+	}
 	&:after{
 		content: "";
 		width: 58%;
@@ -700,18 +876,34 @@
 		position: absolute;
 		bottom: 289px;
 		right: 0;
+		@include mq(){
+			bottom: 110px;
+		}
 	}
 	.inner{
 		position: relative;
 		z-index: 2;
 	}
 }
+.voice-ttl{
+	position: absolute;
+	top: 37px;
+	left: 0;
+	width: 39px;
+}
 .voice-list{
 	margin: 0 -38px;
+	@include mq(){
+		margin: 0 -20px;
+	}
 	.slick-arrow{
 		width: 20px;
 		height: 53px;
 		z-index: 2;
+		@include mq(){
+			width: 11px;
+			height: 29px;
+		}
 		&:before{
 			display: none;
 		}
@@ -719,11 +911,17 @@
 			right: -56px;
 			background: url("../img/next.png")no-repeat;
 			background-size: 100%;
+			@include mq(){
+				right: 13px;
+			}
 		}
 		&.slick-prev{
 			left: -56px;
 			background: url("../img/prev.png")no-repeat;
 			background-size: 100%;
+			@include mq(){
+				left: 13px;
+			}
 		}
 	}
 	&__item{
@@ -750,11 +948,17 @@
 	&__ct{
 		@include fts(18,24);
 		padding: 0 20px 25px;
+		@include mq(){
+			@include fts(17.6,23.47);
+		}
 		&-ttl{
 			display: block;
 			@include fts(24,32);
 			font-weight: bold;
 			margin-bottom: 10px;
+			@include mq(){
+				@include fts(23.47,31.3)
+			}
 		}
 		p{
 			@include palt;
@@ -774,6 +978,9 @@
 		@include smooth-transition;
 		opacity: 0;
 		visibility: hidden;
+		@include mq(){
+			@include fts(17.6,39.12);
+		}
 	}
 }
 
@@ -788,10 +995,18 @@
 		background: url(../img/service-bf.png) no-repeat;
 		background-size: 100%;
 		background-position: top left;
+		@include mq(){
+			background: url(../img/service-bf-sp.png) no-repeat;
+			background-size: 100%;
+			background-position: top left;
+		}
 	}
 	.inner{
 		position: relative;
 		z-index: 1;
+		@include mq(){
+			z-index: 4;
+		}
 	}
 }
 .service-ttl{
@@ -799,13 +1014,29 @@
 	top: 438px;
 	left: 0;
 	z-index: 3;
+	@include mq(){
+		top: -5px;
+		left: auto;
+		right: 0;
+		width: 47px;
+	}
 }
 .service-list{
 	margin: 0 -38px 217px;
+	@include mq(){
+		margin: 0 -15px 100px;
+		z-index: 3;
+		position: relative;
+	}
 	.slick-arrow{
 		width: 20px;
 		height: 53px;
 		z-index: 2;
+		@include mq(){
+			width: 11px;
+			height: 29px;
+			top: calc(50% - 120px);
+		}
 		&:before{
 			display: none;
 		}
@@ -813,11 +1044,17 @@
 			right: -56px;
 			background: url("../img/next.png")no-repeat;
 			background-size: 100%;
+			@include mq(){
+				right: 13px;
+			}
 		}
 		&.slick-prev{
 			left: -56px;
 			background: url("../img/prev.png")no-repeat;
 			background-size: 100%;
+			@include mq(){
+				left: 13px;
+			}
 		}
 	}
 	&__item{
@@ -830,6 +1067,9 @@
 		//box-shadow: 0 10px 10px 0 rgba(black,0.1);
 		border: 2px solid #9a9696;
 		margin-bottom: 90px;
+		@include mq(){
+			margin-bottom: 84px;
+		}
 	}
 	&__img{
 		img{
@@ -840,20 +1080,34 @@
 		@include fts(18,24);
 		font-weight: 500;
 		padding: 23px 30px 40px;
+		@include mq(){
+			@include fts(16.5,24.75);
+			padding: 21px 15px 40px;
+		}
 		&-program{
 			display: block;
 			font-weight: 300;
 			letter-spacing: 2px;
 			margin-bottom: 13px;
+			@include mq(){
+				letter-spacing: 1.5px;
+				margin-bottom: 8px;
+			}
 		}
 		&-ttl{
 			display: block;
 			@include fts(24,32);
 			font-weight: bold;
 			margin-bottom: 10px;
+			@include mq(){
+				@include font-size(22);
+			}
 		}
 		.mh{
 			margin-bottom: 33px;
+			@include mq(){
+				margin-bottom: 47px;
+			}
 		}
 		p{
 			@include palt;
@@ -864,6 +1118,9 @@
 	}
 	&__note{
 		@include fts(18,40);
+		@include mq(){
+			@include fts(16.5,36.67);
+		}
 		&-btn{
 			@include flex(center,center,wrap);
 			color: white;
@@ -872,6 +1129,10 @@
 			font-weight: 500;
 			height: 68px;
 			margin-bottom: 41px;
+			@include mq(){
+				@include font-size(22);
+				height: 60px;
+			}
 		}
 	}
 }

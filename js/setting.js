@@ -41,12 +41,28 @@ $(".js-voice-list").slick({
 	slidesToScroll: 1,
 	autoplay: false,
 	autoplaySpeed: 2000,
+	responsive: [
+		{
+			breakpoint: 834,
+			settings: {
+				slidesToShow: 1
+			}
+		}
+	]
 });
 $(".js-service-list").slick({
 	slidesToShow: 3,
 	slidesToScroll: 1,
 	autoplay: false,
 	autoplaySpeed: 2000,
+	responsive: [
+		{
+			breakpoint: 834,
+			settings: {
+				slidesToShow: 1
+			}
+		}
+	]
 });
 
 
